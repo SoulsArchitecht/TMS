@@ -1,4 +1,4 @@
-package ru.sshibko.TMS;
+package ru.sshibko.tms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

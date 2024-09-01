@@ -1,4 +1,4 @@
-package ru.sshibko.TMS;
+package ru.sshibko.tms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
