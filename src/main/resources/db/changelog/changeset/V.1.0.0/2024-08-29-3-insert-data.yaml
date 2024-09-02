@@ -1,0 +1,179 @@
+databaseChangeLog:
+  - changeSet:
+      id: 06-insert-data
+      author: Sergey Shibko
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: email
+                  value: first@gmail.com
+              - column:
+                  name: full_name
+                  value: Mr.First
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: email
+                  value: second@gmail.com
+              - column:
+                  name: full_name
+                  value: Mr.Second
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: email
+                  value: third@gmail.com
+              - column:
+                  name: full_name
+                  value: Ms.Third
+
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: title
+                  value: first_task
+              - column:
+                  name: status
+                  value: PENDING
+              - column:
+                  name: priority
+                  value: HIGH
+              - column:
+                  name: created_at
+                  value: '2024-08-29 10:40:28'
+              - column:
+                  name: updated_at
+                  value:
+              - column:
+                  name: author_id
+                  value: 1
+              - column:
+                  name: assignee_id
+                  value: 3
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: title
+                  value: second_task
+              - column:
+                  name: status
+                  value: IN_PROGRESS
+              - column:
+                  name: priority
+                  value: MEDIUM
+              - column:
+                  name: created_at
+                  value: '2024-08-29 11:40:28'
+              - column:
+                  name: updated_at
+                  value:
+              - column:
+                  name: author_id
+                  value: 1
+              - column:
+                  name: assignee_id
+                  value: 2
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: title
+                  value: third_task
+              - column:
+                  name: status
+                  value: COMPLETED
+              - column:
+                  name: priority
+                  value: LOW
+              - column:
+                  name: created_at
+                  value: '2024-08-29 12:40:28'
+              - column:
+                  name: updated_at
+                  value:
+              - column:
+                  name: author_id
+                  value: 1
+              - column:
+                  name: assignee_id
+                  value: 2
+
+        - insert:
+            tableName: comments
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: text
+                  value: first_comment
+              - column:
+                  name: created_at
+                  value: '2024-08-29 14:40:28'
+              - column:
+                  name: author_id
+                  value: 3
+              - column:
+                  name: task_id
+                  value: 1
+        - insert:
+            tableName: comments
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: text
+                  value: second_comment
+              - column:
+                  name: created_at
+                  value: '2024-08-29 16:40:28'
+              - column:
+                  name: author_id
+                  value: 1
+              - column:
+                  name: task_id
+                  value: 1
+        - insert:
+            tableName: comments
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: text
+                  value: third_comment
+              - column:
+                  name: created_at
+                  value: '2024-08-29 20:40:28'
+              - column:
+                  name: author_id
+                  value: 2
+              - column:
+                  name: task_id
+                  value: 2
+

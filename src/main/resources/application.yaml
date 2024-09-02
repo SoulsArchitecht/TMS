@@ -1,0 +1,32 @@
+server:
+  port: 8181
+spring:
+  application:
+    name: tms
+  profiles:
+    active: dev
+    default: dev
+
+  datasource:
+    url: jdbc:postgresql://localhost:15432/tms_db
+    username: username
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+        hibernate:
+          ddl-auto: none
+          #dialect: org.hibernate.dialect.PostgreSQL9Dialect
+          format_sql: true
+        show_sql: true
+
+  liquibase:
+    enabled: true
+    drop-first: false
+    #change-log:
+    #  classpath: db/changelog/changeset/db.changelog-master.yaml
+    default-schema: public
+
+
+

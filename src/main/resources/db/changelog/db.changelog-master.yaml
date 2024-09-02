@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/V.1.0.0/create-enum.sql
+  - include:
+      file: db/changelog/changeset/V.1.0.0/2024-08-29-1-create-base-tables.yaml
+  - include:
+      file: db/changelog/changeset/V.1.0.0/2024-08-29-2-create-foreign-keys.yaml
+  - include:
+      file: db/changelog/changeset/V.1.0.0/2024-08-29-3-insert-data.yaml

@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: 02-create-foreign-keys
+      author: Shibko Sergey
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: assignee_id
+            baseTableName: tasks
+            constraintName: FK_USER_ASSIGNEE_ID
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: users
+            validate: true
+  - changeSet:
+      id: 03-create-foreign-keys
+      author: Shibko Sergey
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: author_id
+            baseTableName: tasks
+            constraintName: FK_USER_AUTHOR_ID
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: users
+            validate: true
+  - changeSet:
+      id: 04-create-foreign-keys
+      author: Shibko Sergey
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: author_id
+            baseTableName: comments
+            constraintName: FK_USER_AUTHOR_ID
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: users
+            validate: true
+  - changeSet:
+      id: 05-create-foreign-keys
+      author: Shibko Sergey
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: task_id
+            baseTableName: comments
+            constraintName: FK_TASK_ID
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: tasks
+            validate: true
