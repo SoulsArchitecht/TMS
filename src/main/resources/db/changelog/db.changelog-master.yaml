@@ -7,3 +7,7 @@ databaseChangeLog:
       file: db/changelog/changeset/V.1.0.0/2024-08-29-2-create-foreign-keys.yaml
   - include:
       file: db/changelog/changeset/V.1.0.0/2024-08-29-3-insert-data.yaml
+  - include:
+      file: db/changelog/changeset/V.1.0.0/2024-09-02-add-column-to-task.yaml
+  - include:
+      file: db/changelog/changeset/V.1.0.0/add-cast-to-enum.sql

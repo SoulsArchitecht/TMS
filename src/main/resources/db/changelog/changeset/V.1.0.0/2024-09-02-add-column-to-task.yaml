@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 07-add-column
+      author: Sergey Shibko
+      changes:
+        - addColumn:
+            tableName: tasks
+            columns:
+              - column:
+                  name: description
+                  type: text
+                  defaultValue: "default value"
+                  constraints:
+                    nullable: false
