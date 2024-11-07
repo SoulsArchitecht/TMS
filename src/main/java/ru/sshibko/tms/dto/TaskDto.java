@@ -1,8 +1,6 @@
 package ru.sshibko.tms.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import ru.sshibko.tms.model.Comment;
 import ru.sshibko.tms.model.Priority;
 import ru.sshibko.tms.model.Status;
@@ -11,7 +9,8 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class TaskDto implements Serializable {
@@ -25,5 +24,5 @@ public class TaskDto implements Serializable {
     private Instant updatedAt;
     private Long authorId;
     private Long assigneeId;
-    private List<Comment> comments;
+    //private List<Comment> comments;
 }

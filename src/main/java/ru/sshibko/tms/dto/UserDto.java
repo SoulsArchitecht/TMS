@@ -1,14 +1,11 @@
 package ru.sshibko.tms.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
-import ru.sshibko.tms.model.Task;
+import lombok.*;
 
 import java.io.Serializable;
-import java.util.List;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class UserDto implements Serializable {

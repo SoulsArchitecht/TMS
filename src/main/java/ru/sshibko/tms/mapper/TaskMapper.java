@@ -18,8 +18,8 @@ public class TaskMapper implements Serializable {
         taskDto.setCreatedAt(task.getCreatedAt());
         taskDto.setUpdatedAt(task.getUpdatedAt());
         taskDto.setAuthorId(task.getAuthor().getId());
-        taskDto.setAssigneeId(task.getAuthor().getId());
-        taskDto.setComments(task.getComments());
+        taskDto.setAssigneeId(task.getAssignee().getId());
+        //taskDto.setComments(task.getComments());
 
         return taskDto;
     }
@@ -34,7 +34,7 @@ public class TaskMapper implements Serializable {
         task.setPriority(taskDto.getPriority());
         task.setCreatedAt(taskDto.getCreatedAt());
         task.setUpdatedAt(taskDto.getUpdatedAt());
-        task.setComments(taskDto.getComments());
+        //task.setComments(taskDto.getComments());
 
         return task;
     }

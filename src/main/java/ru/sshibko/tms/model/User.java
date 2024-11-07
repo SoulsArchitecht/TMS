@@ -1,6 +1,6 @@
 package ru.sshibko.tms.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,6 +27,7 @@ public class User implements Serializable {
     @Column(name = "full_name", nullable = false)
     private String fullName;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "assignee", fetch = FetchType.LAZY, cascade = {CascadeType.REFRESH, CascadeType.REMOVE, CascadeType.PERSIST})
     private List<Task> attachedTasks = new ArrayList<>();
 

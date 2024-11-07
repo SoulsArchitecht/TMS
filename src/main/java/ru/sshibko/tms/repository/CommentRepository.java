@@ -6,10 +6,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.sshibko.tms.model.Comment;
 
+import java.util.List;
+
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
     Page<Comment> findByTaskId(Long taskId, Pageable pageable);
 
     Page<Comment> findByAuthorId(Long authorId, Pageable pageable);
+
+    List<Comment> findAllByIdIn(List<Long> taskIds);
 }
