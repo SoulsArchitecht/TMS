@@ -49,7 +49,7 @@ public class TaskController {
             @RequestParam(value = "page", defaultValue = "0") int page,
             @RequestParam(value = "size", defaultValue = "10") int size) {
 
-        PagedDataDto<Task> pagedDataDto = taskService.findAllAccountsPaged(filter, PageRequest.of(page, size));
+        PagedDataDto<Task> pagedDataDto = taskService.findAllTasksPaged(filter, PageRequest.of(page, size));
         return ResponseEntity.ok(pagedDataDto);
     }
 

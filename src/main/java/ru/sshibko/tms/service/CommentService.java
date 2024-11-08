@@ -3,12 +3,16 @@ package ru.sshibko.tms.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import ru.sshibko.tms.dto.CommentDto;
+import ru.sshibko.tms.dto.PagedDataDto;
 import ru.sshibko.tms.exception.ResourceNotFoundException;
 import ru.sshibko.tms.mapper.CommentMapper;
 import ru.sshibko.tms.model.Comment;
+import ru.sshibko.tms.model.Task;
 import ru.sshibko.tms.repository.CommentRepository;
 import ru.sshibko.tms.repository.TaskRepository;
 import ru.sshibko.tms.repository.UserRepository;
@@ -99,7 +103,7 @@ public class CommentService implements CRUDService<CommentDto> {
     @Override
     @Transactional
     public void delete(Long commentId) {
-        log.info("Deleting task with ID: " + commentId);
+        log.info("Deleting comment with ID: " + commentId);
         Comment comment = commentRepository.findById(commentId).orElseThrow(
                 () -> new ResourceNotFoundException("Comment with given id: "
                         + commentId + " is not exists")
@@ -107,5 +111,23 @@ public class CommentService implements CRUDService<CommentDto> {
 
         commentRepository.deleteById(commentId);
         log.info("Comment with ID " + commentId + " deleted successfully");
+    }
+
+
+    public PagedDataDto<Comment> findAllCommentsPaged(Long filter, PageRequest pageRequest) {
+        Page<Comment> commentPage;
+        if (filter != null) {
+            commentPage = commentRepository.findByAuthorId(filter, pageRequest);
+        } else {
+            commentPage = commentRepository.findAll(pageRequest);
+        }
+
+        //Page<Task> pagedData = taskRepository.findAll(pageRequest);
+
+        PagedDataDto<Comment> pagedDataDto = new PagedDataDto<>();
+        pagedDataDto.setData(commentPage.getContent());
+        pagedDataDto.setTotal(commentPage.getTotalPages());
+
+        return pagedDataDto;
     }
 }

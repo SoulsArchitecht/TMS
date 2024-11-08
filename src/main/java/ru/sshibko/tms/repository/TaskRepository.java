@@ -47,6 +47,10 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     @Query(value = findComments, nativeQuery = true)
     List<Long> findCommentsByTaskId(@Param("taskId") Long taskId);
 
+    @Query(value = byAuthorId, nativeQuery = true)
+    List<Task> findByAuthorIdNotPaged(@Param("authorId") Long authorId);
 
+    @Query(value = byAssigneeId, nativeQuery = true)
+    List<Task> findByAssigneeIdNotPaged(@Param("assigneeId") Long assigneeId);
 
 }

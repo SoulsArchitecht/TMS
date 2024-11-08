@@ -127,15 +127,18 @@ public class TaskService implements CRUDService<TaskDto> {
         log.info("Task with ID " + taskId + " deleted successfully");
     }
 
-    public PagedDataDto<Task> findAllAccountsPaged(String filter, PageRequest pageRequest) {
-        Page<Task> taskPage;
-        if (filter.equals("")) {
-            taskPage = taskRepository.findByPriority("", pageRequest);
+    public PagedDataDto<Task> findAllTasksPaged(String filter, PageRequest pageRequest) {
+        //TODO filters
+/*        Page<Task> taskPage;
+        if (filter != null) {
+            taskPage = taskRepository.findByPriority(Priority.HIGH.toString(), pageRequest);
         } else {
             taskPage = taskRepository.findAll(pageRequest);
-        }
+        }*/
 
         //Page<Task> pagedData = taskRepository.findAll(pageRequest);
+
+        Page<Task> taskPage = taskRepository.findAll(pageRequest);
 
         PagedDataDto<Task> pagedDataDto = new PagedDataDto<>();
         pagedDataDto.setData(taskPage.getContent());
